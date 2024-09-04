@@ -1,0 +1,21 @@
+# tetris-deployment.yaml
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gamingcorner-deployment
+spec:
+  replicas: 2 # You can adjust the number of replicas as needed
+  selector:
+    matchLabels:
+      app: dotnetapp
+  template:
+    metadata:
+      labels:
+        app: dotnetapp
+    spec:
+      containers:
+        - name: dotnetapp
+          image: sha256:09fa764cbd5b5318da0ede94d3495ab34102f0d467074a83a2da6502ce3aa59b # Replace with the actual image tag
+          ports:
+            - containerPort: 80 # Replace with the port your Tetris game listens on
