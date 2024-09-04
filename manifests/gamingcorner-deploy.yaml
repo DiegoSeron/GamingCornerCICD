@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
       - name: docker-compose-dotnet-core-and-mssql-app
-        image: diegosp/gamingcorner_netv2-api:v3 
+        image: diegosp/gamingcornerapi:v4 
         ports:
         - containerPort: 80
 
