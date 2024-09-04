@@ -41,5 +41,7 @@ jobs:
       run: |
           kubectl apply -f manifests/gamingcorner-deploy.yaml
           kubectl apply -f manifests/gamingcorner-svc.yaml
+          kubectl apply -f manifests/vue-deploy.yaml
+          kubectl apply -f manifests/vue-svc.yaml
 
 
