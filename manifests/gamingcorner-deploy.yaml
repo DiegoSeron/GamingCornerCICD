@@ -1,21 +1,25 @@
-# tetris-deployment.yaml
-
-apiVersion: apps/v1
+apiVersion: apps/v1 # for versions before 1.9.0 use apps/v1beta2
 kind: Deployment
 metadata:
-  name: gamingcorner-deployment
+  name: dotnetapp
+  labels:
+    app: dotnetapp
 spec:
-  replicas: 2 # You can adjust the number of replicas as needed
   selector:
     matchLabels:
       app: dotnetapp
+      tier: frontend
+  strategy:
+    type: Recreate
   template:
     metadata:
       labels:
         app: dotnetapp
+        tier: frontend
     spec:
       containers:
-        - name: dotnetapp
-          image: diegosp/gamingcorner_netv2-api:v3 # Replace with the actual image tag
-          ports:
-            - containerPort: 80 # Replace with the port your Tetris game listens on
+      - name: docker-compose-dotnet-core-and-mssql-app
+        image: diegosp/gamingcorner_netv2-api:v3
+        ports:
+        - containerPort: 80
+
