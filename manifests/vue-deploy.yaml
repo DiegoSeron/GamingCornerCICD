@@ -1,1 +1,24 @@
-
+apiVersion: apps/v1 # for versions before 1.9.0 use apps/v1beta2
+kind: Deployment
+metadata:
+  name: vue-app
+  labels:
+    app: vue-app
+spec:
+  selector:
+    matchLabels:
+      app: vue-app
+      tier: frontend
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: vue-app
+        tier: frontend
+    spec:
+      containers:
+      - name: vue-app
+        image: diegosp/vue-app:v1 
+        ports:
+        - containerPort: 80
