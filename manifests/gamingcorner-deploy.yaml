@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
       - name: docker-compose-dotnet-core-and-mssql-app
-        image: diegosp/dotnetappv5:latest 
+        image: diegosp/dotnetapp5:latest 
         ports:
         - containerPort: 80
 
