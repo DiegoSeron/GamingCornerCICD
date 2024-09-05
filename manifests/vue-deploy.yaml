@@ -19,6 +19,6 @@ spec:
     spec:
       containers:
       - name: vue-app
-        image: diegosp/vue-appv2:v3 
+        image: diegosp/vue-appv3:v4 
         ports:
         - containerPort: 80
