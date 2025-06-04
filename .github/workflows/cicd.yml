@@ -7,7 +7,7 @@ on:
     branches: [ "main" ]
 env:
   ECR_REPOSITORY: gamingcorner-sv
-  EKS_CLUSTER_NAME: gamingcorner
+  EKS_CLUSTER_NAME: gcorner-cluster
   AWS_REGION: us-east-1
 
 jobs:
@@ -41,7 +41,5 @@ jobs:
       run: |
           kubectl apply -f manifests/gamingcorner-deploy.yaml
           kubectl apply -f manifests/gamingcorner-svc.yaml
-          kubectl apply -f manifests/vue-deploy.yaml
-          kubectl apply -f manifests/vue-svc.yaml
 
 
